@@ -13,6 +13,6 @@ router.param("id", getBookById);
 
 router.post("/:id", isLoggedIn, addBookToCart);
 router.put("/:id", isLoggedIn, removeBookFromCart);
-router.put("/", isLoggedIn, buyCart);
+router.put("/buy", isLoggedIn, buyCart);
 
 module.exports = router;

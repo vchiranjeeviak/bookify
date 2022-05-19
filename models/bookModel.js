@@ -17,6 +17,10 @@ const bookSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    cloud_book_name: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: true }
 );

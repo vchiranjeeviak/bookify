@@ -2,6 +2,7 @@ const express = require("express");
 require("dotenv").config();
 const connectdb = require("./config/database");
 const cors = require("cors");
+const fileUpload = require("express-fileupload");
 
 connectdb();
 
@@ -12,6 +13,7 @@ const app = express();
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(fileUpload());
 
 const authRoutes = require("./routes/authRoutes");
 const bookRoutes = require("./routes/bookRoutes");
