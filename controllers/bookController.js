@@ -24,7 +24,7 @@ const getBook = async (req, res) => {
 // POST api/book
 const addBook = async (req, res) => {
   const { name, price, description } = req.body;
-  const upload_path = __dirname + "/temp_media/" + req.files.image.name;
+  const upload_path = "/app" + "/temp_media/" + req.files.image.name;
   await req.files.image.mv(upload_path);
   if ((!name, !price, !req.files.image)) {
     return res.status(400).json({
